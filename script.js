@@ -45,7 +45,6 @@ function setGreeting() {
   $("greeting").textContent = `Good ${part}, ${user.name}`;
 }
 
-// Click a card to add progress (Mood cycles through moods)
 document.querySelectorAll(".stat").forEach((card) => {
   card.addEventListener("click", () => {
     const key = card.dataset.key;
@@ -59,21 +58,19 @@ document.querySelectorAll(".stat").forEach((card) => {
   });
 });
 
-// Sidebar navigation
 document.querySelectorAll(".nav-link").forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
     document.querySelector(".nav-link.active").classList.remove("active");
     link.classList.add("active");
-    // TODO: go to the matching page, e.g. window.location = "tasks.php";
+  
   });
 });
 
-// Daily quote (changes by day)
 const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 864e5);
 $("quote").textContent = quotes[dayOfYear % quotes.length];
 
-// AI popup (placeholder)
+
 const modal = $("ai-modal");
 $("ai-btn").addEventListener("click", () => { modal.hidden = false; $("ai-input").focus(); });
 $("ai-close").addEventListener("click", () => { modal.hidden = true; });
@@ -85,7 +82,7 @@ $("ai-send").addEventListener("click", () => {
     : "Type a question first.";
 });
 
-// Scale the 1470x868 layout to fit the window (keeps it identical to the design)
+
 function fit() {
   const s = Math.min(1, (window.innerWidth - 32) / 1470);
   $("stage").style.width = 1470 * s + "px";
