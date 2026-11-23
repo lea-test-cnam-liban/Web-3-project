@@ -1,0 +1,198 @@
+.water-top {
+  display: grid;
+  grid-template-columns: 632px 452px;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.water-total,
+.water-add {
+  height: 218px;
+  padding: 28px;
+  border-radius: 40px;
+}
+
+.water-total .value {
+  margin: 20px 0 16px 1px;
+}
+
+.water-total .sub {
+  margin-top: 14px;
+  font-size: 20px;
+  color: var(--muted);
+}
+
+.quick-btns {
+  display: flex;
+  gap: 12px;
+  margin: 22px 0 16px;
+}
+
+.quick-btns .btn {
+  flex: 1;
+  height: 48px;
+  font-size: 18px;
+  border-color: #48c6ef;
+  color: #1c8fb3;
+}
+
+.quick-btns .btn:hover {
+  background: #e8f8fd;
+}
+
+.custom-row {
+  display: flex;
+  gap: 12px;
+}
+
+.custom-row input {
+  flex: 1;
+  height: 48px;
+  padding: 0 16px;
+  border: 1px solid var(--track);
+  border-radius: 99px;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.custom-row .btn {
+  height: 48px;
+  padding: 0 28px;
+  font-size: 18px;
+}
+
+.water-history {
+  padding: 28px;
+  height: 260px;
+  overflow-y: auto;
+}
+
+#water-list {
+  list-style: none;
+  margin-top: 14px;
+}
+
+#water-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--track);
+  font-size: 22px;
+}
+
+#water-list li:last-child {
+  border-bottom: 0;
+}
+
+#water-list .time {
+  color: var(--muted);
+  font-size: 18px;
+}
+
+#water-list .del {
+  background: none;
+  border: 0;
+  color: #e86a6a;
+  font-size: 18px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.empty-msg {
+  color: var(--muted);
+  font-size: 20px;
+  padding-top: 10px;
+}
+.goal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.goal-row .sub {
+  margin-top: 0;
+}
+
+.goal-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  color: var(--muted);
+}
+
+.goal-edit input {
+  width: 90px;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid var(--track);
+  border-radius: 12px;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.goal-edit .btn {
+  height: 40px;
+  padding: 0 18px;
+  font-size: 16px;
+}
+
+.water-bottom {
+  display: grid;
+  grid-template-columns: 632px 452px;
+  gap: 20px;
+}
+
+.water-week {
+  height: 260px;
+  padding: 28px;
+  border-radius: 40px;
+}
+
+.week-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  height: 160px;
+  margin-top: 18px;
+}
+
+.week-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.week-bar {
+  width: 100%;
+  max-width: 56px;
+  min-height: 6px;
+  border-radius: 12px 12px 6px 6px;
+  background: #48c6ef;
+  transition: height .6s ease;
+}
+
+.week-bar.empty {
+  background: var(--track);
+}
+
+.week-bar.reached {
+  background: #2ec4b6;
+}
+
+.week-val {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.week-day {
+  font-size: 16px;
+  color: var(--muted);
+}

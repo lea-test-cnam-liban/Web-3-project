@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LifeGlow – Water</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="water.css">
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="app" id="app">
+
+      <aside class="sidebar">
+        <div class="logo"><i class="ico"></i><span>LifeGlow</span></div>
+        <nav>
+          <a href="index.html" class="nav-link"><i class="ico"></i><span>Dashboard</span></a>
+          <a href="#" class="nav-link"><i class="ico"></i><span>Tasks</span></a>
+          <a href="#" class="nav-link"><i class="ico"></i><span>Calendar</span></a>
+          <a href="#" class="nav-link"><i class="ico"></i><span>Mood</span></a>
+          <a href="#" class="nav-link"><i class="ico"></i><span>Food</span></a>
+          <a href="water.html" class="nav-link active"><i class="ico"></i><span>Water</span></a>
+          <a href="#" class="nav-link"><i class="ico"></i><span>Workout</span></a>
+          <a href="#" class="nav-link"><i class="ico"></i><span>Goals</span></a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header>
+          <h1>Hydration</h1>
+          <p>Stay on top of your daily water goal</p>
+        </header>
+
+        <section class="water-top">
+         <div class="card water-total">
+  <div class="label"><i class="ico c-cyan"></i><span>Today</span></div>
+  <div class="value" id="water-total">0 / 2000 ml</div>
+  <div class="bar"><div class="fill blue" id="water-bar"></div></div>
+  <div class="goal-row">
+    <span class="sub" id="water-msg">Let's start drinking!</span>
+    <span class="goal-edit">
+      Goal:
+      <input type="number" id="goal-input" min="500" max="6000" step="250" value="2000"> ml
+      <button class="btn" id="goal-save">Save</button>
+    </span>
+  </div>
+</div>
+
+          <div class="card water-add">
+            <div class="label"><i class="ico c-cyan"></i><span>Add water</span></div>
+            <div class="quick-btns">
+              <button class="btn" data-ml="150">+150 ml</button>
+              <button class="btn" data-ml="250">+250 ml</button>
+              <button class="btn" data-ml="500">+500 ml</button>
+            </div>
+            <div class="custom-row">
+              <input type="number" id="custom-ml" min="1" max="2000" placeholder="Custom ml">
+              <button class="btn primary" id="custom-add">Add</button>
+            </div>
+          </div>
+        </section>
+
+               <section class="water-bottom">
+          <div class="card water-week">
+            <div class="label"><i class="ico c-cyan"></i><span>Last 7 days</span></div>
+            <div class="week-chart" id="week-chart"></div>
+          </div>
+
+          <div class="card water-history">
+            <div class="label"><i class="ico c-cyan"></i><span>Today's drinks</span></div>
+            <ul id="water-list"></ul>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script src="water.js"></script>
+</body>
+</html>

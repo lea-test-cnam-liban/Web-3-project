@@ -48,6 +48,10 @@ function setGreeting() {
 document.querySelectorAll(".stat").forEach((card) => {
   card.addEventListener("click", () => {
     const key = card.dataset.key;
+      if (key === "water") {
+      window.location.href = "water.html";
+      return;
+    }
     if (key === "mood") {
       moodIndex = (moodIndex + 1) % moods.length;
     } else {
@@ -55,15 +59,6 @@ document.querySelectorAll(".stat").forEach((card) => {
       item.current = Math.min(item.goal, +(item.current + item.step).toFixed(2));
     }
     render();
-  });
-});
-
-document.querySelectorAll(".nav-link").forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    document.querySelector(".nav-link.active").classList.remove("active");
-    link.classList.add("active");
-  
   });
 });
 
@@ -91,6 +86,19 @@ function fit() {
 }
 window.addEventListener("resize", fit);
 
+async function loadWater() {
+  try {
+    const res = await fetch("water_api.php");
+    const d = await res.json();
+    data.water.current = d.total / 1000;
+   data.water.goal = d.goal / 1000;
+    render();
+  } catch (err) {
+    console.log("Could not load water data");
+  }
+}
+
 setGreeting();
 fit();
 setTimeout(render, 100);
+loadWater();
