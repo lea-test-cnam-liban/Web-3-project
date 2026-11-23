@@ -33,8 +33,6 @@ body {
   transform-origin: top left;
 }
 
-/* Icon placeholder (same empty boxes as in the screenshot).
-   To use real icons: replace each <i class="ico"></i> with an emoji or icon-font tag. */
 .ico {
   display: inline-block;
   width: 17px;
@@ -52,7 +50,6 @@ body {
 .c-pink   { color: #f59ab0; }
 .c-teal   { color: #2ec4b6; }
 
-/* ---------- Sidebar ---------- */
 .sidebar {
   width: 300px;
   background: #fff;
@@ -90,7 +87,6 @@ nav { display: flex; flex-direction: column; gap: 8px; }
 .nav-link.active { background: var(--primary); color: #fff; }
 .nav-link.active .ico { opacity: 1; }
 
-/* ---------- Main ---------- */
 .main {
   flex: 1;
   padding: 39px 33px 33px;
@@ -181,7 +177,6 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   outline-offset: 2px;
 }
 
-/* ---------- Modal ---------- */
 .modal {
   position: fixed; inset: 0;
   background: rgba(31, 27, 58, .45);

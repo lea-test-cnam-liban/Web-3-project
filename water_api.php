@@ -3,7 +3,6 @@ session_start();
 require 'db.php';
 header('Content-Type: application/json');
 
-// Temporary: until login is ready, everyone is user 1.
 $uid = $_SESSION['user_id'] ?? 1;
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -35,7 +34,6 @@ try {
     } elseif ($method === 'POST') {
         $data = json_decode(file_get_contents('php://input'), true) ?? [];
 
-        // Saving a new goal
         if (isset($data['goal_ml'])) {
             $goal = (int) $data['goal_ml'];
             if ($goal < 500 || $goal > 6000) {
@@ -52,7 +50,7 @@ try {
             exit;
         }
 
-        // Adding a drink
+      
         $amount = (int) ($data['amount_ml'] ?? 0);
         if ($amount < 1 || $amount > 2000) {
             http_response_code(422);
